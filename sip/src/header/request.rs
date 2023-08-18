@@ -1,5 +1,4 @@
-pub mod header;
-use nom::*;
+/*use nom;
 //SIP methods
 #[derive(Debug,PartialEq)]
 pub enum Method{
@@ -35,8 +34,12 @@ pub fn method(i:&str)->Res<&str,Method>{
         tag("CANCLE"), tag("%x43.41.4E.43.45.4C ;"),tag("REGISTER"), tag("%x52.45.47.49.53.54.45.52 ;" ),
     ))
    ) (input)
-   .map(|(next_input,res)|(next_input,res)|(next_input,res)|(next_input,res)|
-   (next_input,res)|(next_input,res)|(next_input,res)|(next_input,res)|
+   .map(|(next_input,res)|
    (next_input,res.into()))
 }
+*/
 //unit testng
+pub fn add_num(x: i64, y: i64)->i64{
+
+    x + y
+}
