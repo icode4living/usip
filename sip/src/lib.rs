@@ -1,14 +1,15 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
 
+pub mod header;
 #[cfg(test)]
-mod tests {
-    use super::*;
+mod tests{
+    use header::*;
+    use nom::{
+        error::{ErrorKind, VerboseError, VerboseErrorKind},
+        Err as NomErr,
+    };
 
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn test_method(){
+        assert_eq!(method("INVITE sip:bob@biloxi.com SIP/2.0"),Ok(("INVITE",Method::Invite)))
     }
 }
