@@ -19,7 +19,8 @@ Cancel,
 Bye,
 Register
 }
-
+//sip version
+type Version <'a> = (&'a str, & 'a str);
 impl From<&str> for Method{
     fn from(i:&str)->Self{
         match  i {
@@ -48,9 +49,11 @@ pub fn method(input:&str)->Res<&str,Method>{
    (next_input,res.into()))
 }
 //parse SIP version
-pub fn sip_version(input:&str)->Res<&str, (&str,Option<&str>)>{
+pub fn sip_version(input:&str)->Res<&str, (&str,&str)>{
     context(
-        "SIP-Version",
-        separated_pair(tag("SIP"),char('/'),tag(double))
+"SIP Version",
+        separated_pair(tag("SIP"), tag("/"), tag("2.0"))
     )(input)
-}
+    }
+
+//parse domain name
