@@ -15,8 +15,8 @@
       //assert_eq!(add_num(4,2), 6)
     }
     #[test]
-    fun test_version(){
-      assert_eq!(sip_version("INVITE sip:bob@biloxi.com SIP/2.0"),
-      Ok(("INVITE sip:bob@biloxi.com ","SIP/2.0")));
+    fn test_version(){
+      assert_eq!(sip_version("SIP/2.0"),
+      Ok(("",("SIP","2.0"))));
     }
 
